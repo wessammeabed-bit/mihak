@@ -82,7 +82,7 @@ npm run dev
 
 ## Live Demo
 
-A working live demo is provided separately as part of the challenge submission.
+https://mihak-studio.ai.studio/
 
 ## Safety Principles
 
@@ -101,3 +101,6 @@ Track 04: Knowledge and Verification Tools for Empowering Those Introducing Isla
 ## Team
 
 MIHAK Integrity Team
+## Sources and Licenses
+
+Quran, Tafsir, and Hadith datasets are used according to their respective source and licensing terms.
