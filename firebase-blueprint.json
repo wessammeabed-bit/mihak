@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User account profile document",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User unique identifier" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "email": { "type": "string", "description": "User email address" },
+        "photoURL": { "type": "string", "description": "User profile avatar URL" },
+        "createdAt": { "type": "string", "description": "Account creation timestamp" },
+        "lastLoginAt": { "type": "string", "description": "Last sign in timestamp" }
+      },
+      "required": ["uid", "createdAt"]
+    },
+    "SavedAudit": {
+      "title": "SavedAudit",
+      "description": "User saved Islamic content audit result",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Audit document ID" },
+        "userId": { "type": "string", "description": "Owner user UID" },
+        "title": { "type": "string", "description": "Audit title or input excerpt" },
+        "inputType": { "type": "string", "description": "Input modality: text, url, audio, pdf, search" },
+        "statusSummary": { "type": "string", "description": "Overall status summary" },
+        "claimCount": { "type": "number", "description": "Total claims audited" },
+        "createdAt": { "type": "string", "description": "Audit timestamp" },
+        "originalUrl": { "type": "string", "description": "Original external URL if applicable" },
+        "auditResult": { "type": "object", "description": "AuditRun result object" },
+        "auditResultJson": { "type": "string", "description": "Serialized JSON string of the AuditRun object" }
+      },
+      "required": ["id", "userId", "createdAt", "inputType"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Private user profile collection where users only access their own profile"
+    },
+    "/audits/{auditId}": {
+      "schema": { "$ref": "#/entities/SavedAudit" },
+      "description": "Saved audit history where each user can only read and write their own audits"
+    }
+  }
+}

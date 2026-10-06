@@ -1,0 +1,6 @@
+{
+  "name": "مِحَكّ | MIHAK",
+  "description": "مدقّق سلامة المحتوى الإسلامي بالذكاء الاصطناعي — Islamic Content Integrity Auditor. تتبّع الادعاء من النص إلى الدليل، واكشف ما تغيّر في الطريق.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

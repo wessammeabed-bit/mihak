@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0C1033;
+    --bg-navy: #12183F;
+    --bg-surface-1: #10163C;
+    --bg-surface-2: #162054;
+    --bg-surface-3: #1E2B6D;
+    --accent-purple: #6150EA;
+    --accent-purple-light: #818CF8;
+    --accent-turquoise: #2EF2C2;
+    --accent-turquoise-dark: #06B6D4;
+    --text-primary: #F2F4FF;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+  }
+
+  body {
+    font-family: 'Readex Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0C1033;
+    color: #F2F4FF;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(97, 80, 234, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 95% 40%, rgba(46, 242, 194, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 5% 85%, rgba(97, 80, 234, 0.06) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .font-serif {
+    font-family: 'Amiri', 'Readex Pro', Georgia, serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C1033;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2B6D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2EF2C2;
+}
+
+/* Modern Technical Card Aesthetics */
+.manuscript-frame {
+  position: relative;
+  background: linear-gradient(135deg, rgba(18, 24, 63, 0.95) 0%, rgba(12, 16, 51, 0.98) 100%);
+  border: 1px solid rgba(46, 242, 194, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+}
+
+.manuscript-frame::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  border: 1px solid rgba(97, 80, 234, 0.15);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.turquoise-glow {
+  box-shadow: 0 0 25px -5px rgba(46, 242, 194, 0.2);
+}
+
+.purple-glow {
+  box-shadow: 0 0 25px -5px rgba(97, 80, 234, 0.25);
+}
+
+.turquoise-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F2F4FF 30%, #2EF2C2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mushaf-card {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(18, 24, 63, 0.85) 0%, rgba(12, 16, 51, 0.95) 100%);
+  border: 1px solid rgba(46, 242, 194, 0.2);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mushaf-card:hover {
+  border-color: rgba(46, 242, 194, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -4px rgba(46, 242, 194, 0.12);
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
